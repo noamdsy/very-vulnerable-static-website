@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backup/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /internal/
+Disallow: /staging/
+Disallow: /debug/
+Allow: /
+
+# NUCLEI TRIGGER: robots.txt discloses sensitive internal paths
+Sitemap: https://nexacloud.io/sitemap.xml

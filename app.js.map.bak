@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "file": "app.js",
+  "sourceRoot": "/home/deploy/nexacloud/src/",
+  "sources": [
+    "internal/auth.ts",
+    "internal/secrets.ts",
+    "internal/admin-api.ts",
+    "config/production.ts"
+  ],
+  "sourcesContent": [
+    "// auth.ts — internal auth module\nconst ADMIN_SECRET = 'NxC_s3cr3t_jwt_signing_key_do_not_share';\n",
+    "// secrets.ts\nexport const DB_PASS = 'Pr0d$ecret99!';\nexport const STRIPE_KEY = 'sk_live_4eC39HqLyjWDarjtT1zdp7dc';\n",
+    null,
+    null
+  ],
+  "names": [],
+  "mappings": "AAAA"
+}

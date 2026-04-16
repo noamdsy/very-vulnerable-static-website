@@ -1,0 +1,32 @@
+{
+  "routes": [
+    {
+      "route": "/.env",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.git/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/backup/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/admin/*",
+      "allowedRoles": ["anonymous"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["*.{css,js,map,sql,env,png,ico,txt}"]
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-store"
+  },
+  "mimeTypes": {
+    ".env": "text/plain",
+    ".sql": "text/plain",
+    ".map": "application/json"
+  }
+}

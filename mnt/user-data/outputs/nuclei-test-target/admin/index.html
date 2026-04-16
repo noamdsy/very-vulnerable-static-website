@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NexaCloud Admin — Internal</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #0b0c0f; color: #e8e9ec; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .panel {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 40px 36px; width: 100%; max-width: 420px;
+    }
+    .tag { display: inline-block; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #f87171; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 99px; margin-bottom: 20px; }
+    h1 { font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+    p { color: #8b8d96; font-size: 13px; margin-bottom: 28px; }
+    label { display: block; font-size: 13px; font-weight: 500; color: #8b8d96; margin-bottom: 6px; }
+    input {
+      width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; color: #e8e9ec; padding: 10px 14px; font-family: inherit; font-size: 14px;
+      outline: none; margin-bottom: 16px;
+    }
+    input:focus { border-color: #6C63FF; }
+    button {
+      width: 100%; padding: 11px; background: #ef4444; color: white; border: none;
+      border-radius: 8px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+    }
+    .note { margin-top: 20px; font-family: 'DM Mono', monospace; font-size: 11px; color: #4b5563; }
+  </style>
+</head>
+<body>
+  <!-- NUCLEI TRIGGER: exposed admin panel with default creds hint -->
+  <!-- default: admin / NexaCloud2024!@# -->
+  <div class="panel">
+    <span class="tag">⚠ Internal access only</span>
+    <h1>Admin Console</h1>
+    <p>NexaCloud internal administration. Unauthorized access is prohibited.</p>
+    <form action="/api/admin/login" method="POST">
+      <label>Username</label>
+      <input type="text" name="username" value="admin" autocomplete="off">
+      <label>Password</label>
+      <input type="password" name="password" autocomplete="on">
+      <button type="submit">Authenticate</button>
+    </form>
+    <!-- hardcoded fallback: use admin:NexaCloud2024!@# if SSO is down -->
+    <div class="note">build: 20241103 · internal-only · do not share URL</div>
+  </div>
+</body>
+</html>
